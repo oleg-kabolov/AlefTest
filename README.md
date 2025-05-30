@@ -1,5 +1,12 @@
-# Vue 3 + TypeScript + Vite
+Для запуска проекта использовать следующие команды: 
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+node --loader ts-node/esm server.ts - для запуска сервера на localhost:3000
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+npm run dev - для запуска клиента localhost:4000
+
+
+версия node.js 18.2.5
+
+![Screenshot_14](https://github.com/user-attachments/assets/1bca0044-afc7-4183-b658-188e0d5c7d30)
+
+![Screenshot_16](https://github.com/user-attachments/assets/9a4c5b44-6ff2-476e-808e-6fc48aa567aa)
