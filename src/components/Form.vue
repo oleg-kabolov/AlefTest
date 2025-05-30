@@ -27,7 +27,11 @@ const validateChildAgeRange = (value: string) =>
   (Number(value) >= 1 && Number(value) <= 18) ||
   "Возраст ребенка должен быть от 1 до 18 лет";
 
+
 const getFirstError = (value: string, validators: Array<Function>) => {
+
+const getFirstError = (value, validators) => {
+
   for (const validator of validators) {
     const result = validator(value);
     if (result !== true) {

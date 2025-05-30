@@ -10,7 +10,6 @@ app.use(cors());
 
 const filePath = path.resolve("./userdata/users.json");
 
-// Интерфейс для данных
 interface Parent {
   id: number;
   name: string;
