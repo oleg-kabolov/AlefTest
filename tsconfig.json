@@ -1,4 +1,19 @@
 {
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist" // Optional: output directory for compiled JS
+  },
+  "ts-node": {
+    "esm": true // This is crucial for ts-node to handle ES Modules
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"],
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },

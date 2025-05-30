@@ -1,9 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <vue-router></vue-router>
   <div>
-    <h1>test</h1>
+    <RouterView />
   </div>
 </template>
 
