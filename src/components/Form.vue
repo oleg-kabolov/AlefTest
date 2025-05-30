@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { computed, onMounted, ref } from "vue";
 import { useUserStore } from "../../store/userStore";
 import Input from "../UI/Input.vue";
@@ -10,20 +10,24 @@ onMounted(() => {
   userStore.fetchData();
 });
 
-const validateRequired = (value) => !!value || "Обязательно для заполнения";
+const validateRequired = (value: string) =>
+  !!value || "Обязательно для заполнения";
 
-const validateNumeric = (value) => !isNaN(Number(value)) || "Введите возраст";
+const validateNumeric = (value: string) =>
+  !isNaN(Number(value)) || "Введите возраст";
 
-const validateNotNumeric = (value) => isNaN(Number(value)) || "Введите имя";
+const validateNotNumeric = (value: string) =>
+  isNaN(Number(value)) || "Введите имя";
 
-const validateParentAgeRange = (value) =>
+const validateParentAgeRange = (value: string) =>
   (Number(value) >= 18 && Number(value) <= 90) ||
   "Возраст родителя от 18 до 90 лет";
-const validateChildAgeRange = (value) =>
+
+const validateChildAgeRange = (value: string) =>
   (Number(value) >= 1 && Number(value) <= 18) ||
   "Возраст ребенка должен быть от 1 до 18 лет";
-// Функция для получения первой ошибки
-const getFirstError = (value, validators) => {
+
+const getFirstError = (value: string, validators: Array<Function>) => {
   for (const validator of validators) {
     const result = validator(value);
     if (result !== true) {
@@ -34,7 +38,7 @@ const getFirstError = (value, validators) => {
 };
 
 const isValid = computed(() => {
-  return userStore.userData.parents.every((parent) => {
+  return userStore.userData?.parents.every((parent: any) => {
     const isParentValid =
       getFirstError(parent.name, [validateRequired, validateNotNumeric]) ===
         "" &&
@@ -44,7 +48,7 @@ const isValid = computed(() => {
         validateParentAgeRange,
       ]) === "";
 
-    const areChildrenValid = parent.children.every((child) => {
+    const areChildrenValid = parent.children.every((child: any) => {
       return (
         getFirstError(child.name, [validateRequired, validateNotNumeric]) ===
           "" &&
@@ -60,11 +64,11 @@ const isValid = computed(() => {
   });
 });
 
-const addChild = (parentId) => {
+const addChild = (parentId: number) => {
   userStore.addChild(parentId);
 };
 
-const removeChild = (parentId, index) => {
+const removeChild = (parentId: number, index: number) => {
   userStore.removeChild(parentId, index);
 };
 
