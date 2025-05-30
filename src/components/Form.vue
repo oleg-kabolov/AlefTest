@@ -22,7 +22,6 @@ const validateParentAgeRange = (value) =>
 const validateChildAgeRange = (value) =>
   (Number(value) >= 1 && Number(value) <= 18) ||
   "Возраст ребенка должен быть от 1 до 18 лет";
-// Функция для получения первой ошибки
 const getFirstError = (value, validators) => {
   for (const validator of validators) {
     const result = validator(value);
