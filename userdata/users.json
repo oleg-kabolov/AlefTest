@@ -3,8 +3,15 @@
     {
       "id": 1,
       "name": "Павел",
-      "age": "33",
-      "children": []
+      "age": "23",
+      "children": [
+        {
+          "id": 1,
+          "name": "Пётр",
+          "age": "12",
+          "parentId": 1
+        }
+      ]
     }
   ]
 }
