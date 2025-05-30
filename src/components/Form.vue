@@ -29,9 +29,6 @@ const validateChildAgeRange = (value: string) =>
 
 
 const getFirstError = (value: string, validators: Array<Function>) => {
-
-const getFirstError = (value, validators) => {
-
   for (const validator of validators) {
     const result = validator(value);
     if (result !== true) {
