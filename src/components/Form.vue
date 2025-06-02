@@ -27,7 +27,6 @@ const validateChildAgeRange = (value: string) =>
   (Number(value) >= 1 && Number(value) <= 18) ||
   "Возраст ребенка должен быть от 1 до 18 лет";
 
-
 const getFirstError = (value: string, validators: Array<Function>) => {
   for (const validator of validators) {
     const result = validator(value);
@@ -245,6 +244,14 @@ const saveData = async () => {
   border: 2px solid #01a7fd;
   transition: 0.2s ease-out;
 }
+:deep(.form__btn-rounded:hover) {
+  background-color: #01a7fd;
+  color: #fff;
+}
+:deep(.form__btn-rounded:hover .form__icon) {
+  background-color: #01a7fd;
+  color: #fff;
+}
 :deep(.form__icon) {
   font-size: 28px;
   margin-right: 10px;
@@ -259,6 +266,11 @@ const saveData = async () => {
   background-color: #01a7fd;
   border: 2px solid #01a7fd;
   transition: 0.2s ease-out;
+}
+:deep(.form__btn-rounded--filled:hover) {
+  background-color: transparent;
+  color: #01a7fd;
+  border: 2px solid #01a7fd;
 }
 .loader {
   height: 800px;
